@@ -11,6 +11,8 @@
 
 (defroutes routes
   (GET "/" req (response/resource-response "index.html" {:root "public"}))
+  (GET "/load-stuff" [] {:status 200
+                         :body {:something "here"}})
   (route/resources "/")
   (route/not-found "Not found"))
 
