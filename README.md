@@ -33,3 +33,8 @@ lein uberjar
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
+
+## Acknowledgments
+
+Thanks to [Daniel Marjenburgh](https://github.com/dmarjenburgh) for
+inspiration and the code to start the CLJS repl.
