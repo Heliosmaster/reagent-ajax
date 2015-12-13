@@ -21,7 +21,13 @@ lein new figwheel-reagent <project_name>
 - Visit `http://localhost:8080`
 
 ## Run in production mode
+- Create the jar with
+
+```
 lein uberjar
+```
+
+- Run it
 
 ## License
 
