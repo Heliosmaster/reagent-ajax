@@ -1,10 +1,12 @@
 # reagent-ajax
 
-Basic Leiningen template with [reagent](https://github.com/holmsand/reagent)
-and [figwheel](https://github.com/bhauman/lein-figwheel), using
-transit and AJAX calls.
+Basic Leiningen template for web applications with
+[reagent](https://github.com/holmsand/reagent), using ajax and the
+[transit format](https://github.com/cognitect/transit-clj) to
+communicate with the backend.
 
-This uses a different directory structure and dependencies than [reagent-figwheel](https://github.com/gadfly361/reagent-figwheel)
+It integrates [figwheel](https://github.com/bhauman/lein-figwheel) and
+makes the `cljs-repl` easily accessible.
 
 ## Usage
 
