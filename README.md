@@ -32,6 +32,41 @@ lein uberjar
 
 - Run it
 
+## Directory structure of generated app
+
+```
+├── README.md
+├── .gitignore
+├── dev
+│   ├── clj
+│   │   └── user.clj
+│   └── cljs
+│       └── <project_name>
+│           └── dev.cljs
+├── project.clj
+├── resources
+│   └── public
+│       ├── css
+│       │   └── screen.css
+│       └── index.html
+├── src
+│   ├── clj
+│   │   └── <project_name>
+│   │       ├── core.clj
+│   │       └── server.clj
+│   └── cljs
+│       └── <project_name>
+│           └── core.cljs
+├── target
+│   └── figwheel_temp
+│       └── dev
+│           └── figwheel
+└── test
+    └── clj
+        └── <project_name>
+            └── core_test.clj
+```
+
 ## License
 
 Distributed under the Eclipse Public License either version 1.0 or (at
