@@ -1,7 +1,8 @@
-# figwheel-reagent
+# reagent-ajax
 
 Basic Leiningen template with [reagent](https://github.com/holmsand/reagent)
-and [figwheel](https://github.com/bhauman/lein-figwheel).
+and [figwheel](https://github.com/bhauman/lein-figwheel), using
+transit and AJAX calls.
 
 This uses a different directory structure and dependencies than [reagent-figwheel](https://github.com/gadfly361/reagent-figwheel)
 
@@ -10,7 +11,7 @@ This uses a different directory structure and dependencies than [reagent-figwhee
 To create an application with this template:
 
 ```
-lein new figwheel-reagent <project_name>
+lein new reagent-ajax <project_name>
 ```
 
 ## Run in development mode

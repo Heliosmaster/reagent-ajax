@@ -8,4 +8,4 @@ All notable changes to this project will be documented in this file. This change
  - Project created
 
 [Unreleased]:
-https://github.com/olivierlacan/keep-a-changelog/compare/v0.1.0...HEAD
+https://github.com/Heliosmaster/reagent-ajax/compare/v0.1.0...HEAD

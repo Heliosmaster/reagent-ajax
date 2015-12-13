@@ -1,9 +1,9 @@
-(ns leiningen.new.figwheel-reagent
+(ns leiningen.new.reagent-ajax
   (:use [leiningen.new.templates :only [renderer name-to-path sanitize-ns ->files]]))
 
-(def render (renderer "figwheel-reagent"))
+(def render (renderer "reagent-ajax"))
 
-(defn figwheel-reagent
+(defn reagent-ajax
   [name]
   (let [data {:name name
               :ns-name (sanitize-ns name)
@@ -18,6 +18,5 @@
              [".gitignore" (render ".gitignore")]
              ["dev/clj/user.clj" (render "user.clj" data)]
              ["src/cljs/{{sanitized}}/core.cljs" (render "core.cljs" data)]
-             ["resources/log4j.properties" (render "log4j.properties")]
              ["resources/public/index.html" (render "index.html" data)]
              ["resources/public/css/screen.css" (render "screen.css")])))
