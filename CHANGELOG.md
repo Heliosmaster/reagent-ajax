@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased][unreleased]
 
+## 0.1.1 - 2016-01-24
+### Changed
+ - Updated dependencies
+
 ## 0.1.0 - 2015-12-13
 ### Added
  - Project created

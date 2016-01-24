@@ -3,13 +3,13 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.8.0-RC3"]
-                 [org.clojure/clojurescript "1.7.170"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [org.clojure/clojurescript "1.7.228"]
                  [ring "1.4.0"]
                  [compojure "1.4.0"]
                  [ring-transit "0.1.4"]]
 
-  :plugins [[lein-cljsbuild "1.1.1"]]
+  :plugins [[lein-cljsbuild "1.1.2"]]
 
   :source-paths ["src/clj" "src/cljs"]
   :test-paths ["test/clj" "test/cljs"]
@@ -17,7 +17,7 @@
 
   :profiles {:dev {:dependencies [[com.cemerick/piggieback "0.2.1"]
                                   [figwheel-sidecar "0.5.0-2"]
-                                  [cljs-ajax "0.5.1"]
+                                  [cljs-ajax "0.5.3"]
                                   [reagent "0.5.1"]]
                    :source-paths ["dev/clj" "dev/cljs"]
                    :resource-paths ["dev/resources"]}
@@ -31,7 +31,7 @@
               {:dev {:source-paths ["dev/cljs" "src/cljs"]
                      :figwheel {:on-jsload {{ns-name}}.dev/on-jsload}
                      :compiler {:output-to "resources/public/js/app.js"
-                                :source-map "resources/public/js/app.js"
+                                :source-map true
                                 :asset-path "js/out"
                                 :main {{ns-name}}.core
                                 :optimizations :none}}
