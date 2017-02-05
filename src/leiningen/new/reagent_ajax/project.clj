@@ -4,21 +4,21 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.7.228"]
-                 [ring "1.4.0"]
-                 [compojure "1.4.0"]
-                 [ring-transit "0.1.4"]]
+                 [org.clojure/clojurescript "1.9.456"]
+                 [ring "1.5.1"]
+                 [compojure "1.5.2"]
+                 [ring-transit "0.1.6"]]
 
-  :plugins [[lein-cljsbuild "1.1.2"]]
+  :plugins [[lein-cljsbuild "1.1.5"]]
 
   :source-paths ["src/clj" "src/cljs"]
   :test-paths ["test/clj" "test/cljs"]
   :resource-paths ["resources"]
 
   :profiles {:dev {:dependencies [[com.cemerick/piggieback "0.2.1"]
-                                  [figwheel-sidecar "0.5.0-2"]
-                                  [cljs-ajax "0.5.3"]
-                                  [reagent "0.5.1"]]
+                                  [figwheel-sidecar "0.5.9"]
+                                  [cljs-ajax "0.5.8"]
+                                  [reagent "0.6.0"]]
                    :source-paths ["dev/clj" "dev/cljs"]
                    :resource-paths ["dev/resources"]}
              :uberjar {:main {{ns-name}}.core

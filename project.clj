@@ -1,4 +1,4 @@
-(defproject reagent-ajax/lein-template "0.1.1"
+(defproject reagent-ajax/lein-template "0.1.2"
   :description "Basic template with reagent and ajax calls using transit"
   :url "http://github.com/Heliosmaster/reagent-ajax"
   :license {:name "Eclipse Public License"

@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased][unreleased]
 
+## 0.1.2 - 2017-02-05
+### Changed
+ - Updated dependencies
+ - Added `output-dir` to `prod` profile, due to an error of figwheel.
+
 ## 0.1.1 - 2016-01-24
 ### Changed
  - Updated dependencies
