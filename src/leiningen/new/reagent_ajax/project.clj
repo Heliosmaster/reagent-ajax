@@ -39,6 +39,7 @@
                {:source-paths ["src/cljs"]
                 :jar true
                 :compiler {:output-to "resources/public/js/app.js"
+                           :output-dir "resources/public/js/out"
                            :asset-path "js/out"
                            :main {{ns-name}}.core
                            :optimizations :advanced
