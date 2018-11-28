@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased][unreleased]
 
+## 0.1.3 - 2017-05-20
+### Changed
+ - Updated dependencies
+
 ## 0.1.2 - 2017-02-05
 ### Changed
  - Updated dependencies
