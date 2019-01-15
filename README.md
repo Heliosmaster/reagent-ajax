@@ -1,12 +1,11 @@
 # reagent-ajax
 
 Basic Leiningen template for web applications with
-[reagent](https://github.com/holmsand/reagent), using ajax and the
+[reagent](https://github.com/reagent-project/reagent), using ajax and the
 [transit format](https://github.com/cognitect/transit-clj) to
 communicate with the backend.
 
-It integrates [figwheel](https://github.com/bhauman/lein-figwheel) and
-makes the `cljs-repl` easily accessible.
+It integrates [figwheel](https://github.com/bhauman/lein-figwheel)
 
 ## Usage
 
@@ -24,6 +23,12 @@ lein new reagent-ajax <project_name>
 - Visit `http://localhost:8080`
 
 ## Run in production mode
+- Compile the clojurescript with
+
+```
+lein cljsbuild once prod
+```
+
 - Create the jar with
 
 ```
@@ -71,8 +76,3 @@ lein uberjar
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
-
-## Acknowledgments
-
-Thanks to [Daniel Marjenburgh](https://github.com/dmarjenburgh) for
-inspiration and the code to start the CLJS repl.

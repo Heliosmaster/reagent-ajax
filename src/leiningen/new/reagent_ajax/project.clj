@@ -3,22 +3,24 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.456"]
-                 [ring "1.6.1"]
-                 [compojure "1.6.0"]
-                 [ring-transit "0.1.6"]]
+  :dependencies [[org.clojure/clojure "1.10.0"]
+                 [org.clojure/clojurescript "1.10.439"]
+                 [ring "1.7.1"]
+                 [mount "0.1.15"]
+                 [compojure "1.6.1"]
+                 [ring-middleware-format "0.7.3"]
+                 [org.slf4j/slf4j-log4j12 "1.7.25"]]
 
-  :plugins [[lein-cljsbuild "1.1.6"]]
+  :plugins [[lein-cljsbuild "1.1.7"]]
 
   :source-paths ["src/clj" "src/cljs"]
   :test-paths ["test/clj" "test/cljs"]
-  :resource-paths ["resources"]
+  :resource-paths ["resources" "generated"]
 
-  :profiles {:dev {:dependencies [[com.cemerick/piggieback "0.2.1"]
-                                  [figwheel-sidecar "0.5.10"]
-                                  [cljs-ajax "0.6.0"]
-                                  [reagent "0.6.0"]]
+  :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.18"]
+                                  [cljs-ajax "0.8.0"]
+                                  [binaryage/devtools "0.9.10"]
+                                  [reagent "0.8.1"]]
                    :source-paths ["dev/clj" "dev/cljs"]
                    :resource-paths ["dev/resources"]}
              :uberjar {:main {{ns-name}}.core
@@ -26,26 +28,22 @@
                        :aot :all
                        :source-paths ["src/clj" "src/cljs"]
                        :uberjar-name "{{ns-name}}.jar"}}
-  :template-additions [".gitignore" "CHANGELOG.md" "resources/public/index.html"]
+  :template-additions [".gitignore" "resources/public/index.html"]
   :cljsbuild {:builds
               {:dev {:source-paths ["dev/cljs" "src/cljs"]
                      :figwheel {:on-jsload {{ns-name}}.dev/on-jsload}
-                     :compiler {:output-to "resources/public/js/app.js"
+                     :compiler {:output-to "generated/public/js/app.js"
+                                :output-dir "generated/public/js/out"
                                 :source-map true
-                                :asset-path "js/out"
+                                :asset-path "/js/out"
                                 :main {{ns-name}}.core
-                                :optimizations :none}}
+                                :optimizations :none
+                                :preloads [devtools.preload]}}
                :prod
-               {:source-paths ["src/cljs"]
-                :jar true
-                :compiler {:output-to "resources/public/js/app.js"
-                           :output-dir "resources/public/js/out"
-                           :asset-path "js/out"
-                           :main {{ns-name}}.core
-                           :optimizations :advanced
-                           :pretty-print false}}}}
+                    {:source-paths ["src/cljs"]
+                     :compiler {:output-to "generated/public/js/app.js"
+                                :optimizations :advanced
+                                :pretty-print false}}}}
 
-  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
-
-  :figwheel {:css-dirs ["resources/public/css"]}
+  :figwheel {:css-dirs ["generated/public/css"]}
   :clean-targets ^{:protect false} [:target-path])

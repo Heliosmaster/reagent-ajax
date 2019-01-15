@@ -2,12 +2,9 @@
   (:require [ring.util.response :as response]
             [compojure.route :as route]
             [compojure.core :refer [defroutes GET PUT POST]]
-            [ring.middleware.transit :as transit]
-            [ring.adapter.jetty :as jetty])
-  (:import [org.eclipse.jetty.server Server]))
-
-(def server (atom nil))
-
+            [mount.core :as mount]
+            [ring.middleware.format :as ring-format]
+            [ring.adapter.jetty :as jetty]))
 
 (defroutes routes
   (GET "/" req (response/resource-response "index.html" {:root "public"}))
@@ -19,15 +16,11 @@
 
 (def app
   (-> routes
-      (transit/wrap-transit-response {:encoding :json})
-      (transit/wrap-transit-body)))
+      (ring-format/wrap-restful-format)))
 
-(defn start! []
-  (when-not @server
-    (reset! server (jetty/run-jetty #'app {:join? false :port 8080}))))
 
-(defn stop! []
-  (when-let [s ^Server @server]
-    (println "Stopping server")
-    (.stop @server)
-    (reset! server nil)))
+(mount/defstate server
+  :start (jetty/run-jetty #'app {:join? false
+                                 :port 8080})
+  :stop (.stop server))
+

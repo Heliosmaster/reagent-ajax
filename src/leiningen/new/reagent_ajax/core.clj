@@ -1,10 +1,11 @@
 (ns {{ns-name}}.core
-  (:require [{{ns-name}}.server :as server])
+  (:require [mount.core :as mount]
+            [{{ns-name}}.server :as server])
   (:gen-class))
 
 
 (defn start! []
-  (server/start!))
+  (mount/start))
 
 (defn -main []
   (start!))
