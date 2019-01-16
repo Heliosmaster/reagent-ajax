@@ -5,7 +5,7 @@ Basic Leiningen template for web applications with
 [transit format](https://github.com/cognitect/transit-clj) to
 communicate with the backend.
 
-It integrates [figwheel](https://github.com/bhauman/lein-figwheel)
+It integrates [figwheel](https://github.com/bhauman/lein-figwheel) for quick and responsive development.
 
 ## Usage
 
@@ -18,30 +18,32 @@ lein new reagent-ajax <project_name>
 ## Run in development mode
 
 - Start a repl with `lein repl`
-- run `(go)`, this will start figwheel, the server on port 8080, and other bootstrapping stuff
-- If you want a cljs repl, run `cljs-repl` from the `user` namespace
+- run `(go)`, this will start figwheel, the server on port `8080`, and other bootstrapping stuff
 - Visit `http://localhost:8080`
 
 ## Run in production mode
-- Compile the clojurescript with
+- Compile the clojurescript with:
 
-```
+```bash
 lein cljsbuild once prod
 ```
 
 - Create the jar with
 
-```
+```bash
 lein uberjar
 ```
 
 - Run it
 
+```bash
+java -jar target/<project_name>.jar
+```
+
 ## Directory structure of generated app
 
 ```
 ├── README.md
-├── .gitignore
 ├── dev
 │   ├── clj
 │   │   └── user.clj
@@ -50,6 +52,7 @@ lein uberjar
 │           └── dev.cljs
 ├── project.clj
 ├── resources
+│   ├── log4j.properties
 │   └── public
 │       ├── css
 │       │   └── screen.css
@@ -62,10 +65,6 @@ lein uberjar
 │   └── cljs
 │       └── <project_name>
 │           └── core.cljs
-├── target
-│   └── figwheel_temp
-│       └── dev
-│           └── figwheel
 └── test
     └── clj
         └── <project_name>
