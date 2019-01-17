@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased][unreleased]
 
+## 0.1.5 - 2019-01-17
+### Fixed
+
+- Correctly use sanitized project name in `index.html`
+
 ## 0.1.4 - 2019-01-15
 ### Added
  - Use [mount](https://github.com/tolitius/mount) for component lifecycle
@@ -36,4 +41,4 @@ All notable changes to this project will be documented in this file. This change
  - Project created
 
 [Unreleased]:
-https://github.com/Heliosmaster/reagent-ajax/compare/v0.1.4...HEAD
+https://github.com/Heliosmaster/reagent-ajax/compare/v0.1.5...HEAD
