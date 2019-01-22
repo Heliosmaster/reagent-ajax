@@ -45,11 +45,8 @@ java -jar target/<project_name>.jar
 ```
 ├── README.md
 ├── dev
-│   ├── clj
-│   │   └── user.clj
-│   └── cljs
-│       └── <project_name>
-│           └── dev.cljs
+│   └── clj
+│       └── user.clj
 ├── project.clj
 ├── resources
 │   ├── log4j.properties

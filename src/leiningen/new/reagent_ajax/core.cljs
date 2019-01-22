@@ -1,6 +1,6 @@
 (ns {{ns-name}}.core
-    (:require [reagent.core :as r]
-              [ajax.core :as ajax]))
+  (:require [reagent.core :as r]
+            [ajax.core :as ajax]))
 
 (enable-console-print!)
 
@@ -14,7 +14,8 @@
        [:h1 "Hello world!"]
        [:span "Loaded stuff in the background:" (str @loaded-stuff)]])))
 
+(defn mount-root []
+  (r/render [root-component] (js/document.getElementById "app")))
+
 (defn ^:export main []
-  (r/render-component
-   [root-component]
-   (js/document.getElementById "app")))
+  (mount-root))

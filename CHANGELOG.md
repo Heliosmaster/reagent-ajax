@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased][unreleased]
 
+## 0.1.6 - 2019-01-22
+### Fixed
+
+- Fixed an issue with `fighweel` live reload
+
 ## 0.1.5 - 2019-01-17
 ### Fixed
 
@@ -41,4 +46,4 @@ All notable changes to this project will be documented in this file. This change
  - Project created
 
 [Unreleased]:
-https://github.com/Heliosmaster/reagent-ajax/compare/v0.1.5...HEAD
+https://github.com/Heliosmaster/reagent-ajax/compare/v0.1.6...HEAD

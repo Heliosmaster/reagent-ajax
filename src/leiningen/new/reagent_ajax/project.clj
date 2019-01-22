@@ -21,7 +21,7 @@
                                   [cljs-ajax "0.8.0"]
                                   [binaryage/devtools "0.9.10"]
                                   [reagent "0.8.1"]]
-                   :source-paths ["dev/clj" "dev/cljs"]
+                   :source-paths ["dev/clj"]
                    :resource-paths ["dev/resources"]}
              :uberjar {:main {{ns-name}}.core
                        :omit-source true
@@ -30,20 +30,20 @@
                        :uberjar-name "{{ns-name}}.jar"}}
   :template-additions [".gitignore" "resources/public/index.html"]
   :cljsbuild {:builds
-              {:dev {:source-paths ["dev/cljs" "src/cljs"]
-                     :figwheel {:on-jsload {{ns-name}}.dev/on-jsload}
-                     :compiler {:output-to "generated/public/js/app.js"
-                                :output-dir "generated/public/js/out"
-                                :source-map true
-                                :asset-path "/js/out"
-                                :main {{ns-name}}.core
-                                :optimizations :none
-                                :preloads [devtools.preload]}}
+              {:dev {:source-paths ["src/cljs"]
+                     :figwheel     {:on-jsload "{{ns-name}}.core/mount-root"}
+                     :compiler     {:output-to     "generated/public/js/app.js"
+                                    :output-dir    "generated/public/js/out"
+                                    :source-map    true
+                                    :asset-path    "/js/out"
+                                    :main          "{{ns-name}}.core"
+                                    :optimizations :none
+                                    :preloads      [devtools.preload]}}
                :prod
                     {:source-paths ["src/cljs"]
-                     :compiler {:output-to "generated/public/js/app.js"
-                                :optimizations :advanced
-                                :pretty-print false}}}}
+                     :compiler     {:output-to     "generated/public/js/app.js"
+                                    :optimizations :advanced
+                                    :pretty-print  false}}}}
 
   :figwheel {:css-dirs ["generated/public/css"]}
   :clean-targets ^{:protect false} [:target-path])
