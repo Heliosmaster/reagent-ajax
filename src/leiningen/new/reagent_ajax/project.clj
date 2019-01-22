@@ -45,5 +45,5 @@
                                     :optimizations :advanced
                                     :pretty-print  false}}}}
 
-  :figwheel {:css-dirs ["generated/public/css"]}
+  :figwheel {:css-dirs ["resources/public/css"]}
   :clean-targets ^{:protect false} [:target-path])
